@@ -1,0 +1,452 @@
+//подключение шрифтов
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+//нулевой стиль
+@import 'nulestyle.scss';
+//переменные
+body {
+  font-family: 'Roboto', sans-serif;
+}
+@mixin flex($d, $fd, $jc, $ai) {
+  display: $d;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin font($fz, $lh, $ls, $c, $fw) {
+  font-size: $fz;
+  line-height: $lh;
+  letter-spacing: $ls;
+  color: $c;
+  font-weight: $fw;
+}
+
+// first frame
+
+.first-frame {
+  background-color: #000000;
+  width: 1440px;
+  height: 880px;
+  margin: 0px auto;
+  &__wrapper {
+    width: 1296px;
+    height: 880px;
+    margin: 0px auto;
+  }
+  &__head {
+    width: 1296px;
+    height: 25px;
+    @include flex(flex, row, space-between, center);
+  }
+  &__logo {
+    margin-top: 40px;
+    margin-left: 50px;
+  }
+  &__list {
+    @include flex(flex, row, space-around, none);
+    width: 333px;
+    margin-top: 40px;
+    margin-right: 50px;
+  }
+  &__listitems {
+    @include font(12px, 12.14px, 1px, #ffffff, none);
+    &:hover {
+      text-shadow: 1px 1px #ffffff;
+    }
+  }
+  &__main {
+    background: url(../img/first-frame/bluetriangle.png) 40%/500px no-repeat,
+      url(../img/first-frame/redtriangle.png) 50%/500px no-repeat;
+    width: 1000px;
+    height: 700px;
+    margin: 0px auto;
+  }
+  &__pretitle {
+    @include font(11px, 15px, 0.2px, #999999, none);
+    text-align: left;
+    margin-left: 30px;
+    padding-top: 200px;
+  }
+  &__title {
+    @include font(114px, 125px, 0em, #ffffff, none);
+    text-align: left;
+  }
+  &__sectitle {
+    @include font(114px, 125px, 0em, #ffffff, none);
+    text-align: right;
+    margin-right: 110px;
+  }
+  &__foot {
+    width: 1050px;
+    height: 54px;
+    margin: 0px auto;
+    @include flex(flex, row, space-between, center);
+  }
+  &__textleft {
+    @include font(19px, 27px, 0em, #ffffff, none);
+    text-align: left;
+  }
+  &__textrighttop {
+    @include font(20px, 22px, 0em, #ffffff, none);
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  &__textrightbottom {
+    @include font(11px, 16px, 0em, #ffffff66, none);
+    text-align: right;
+  }
+}
+
+// second-frame
+
+.second-frame {
+  width: 1400px;
+  height: 820px;
+  margin: 0px auto;
+  &__wrapper {
+    width: 1296px;
+    height: 820px;
+    margin: 86.39px auto 0 auto;
+  }
+  &__smalltitle {
+    padding-left: 15px;
+  }
+}
+.smtitle {
+  font-size: 10px;
+  line-height: 34px;
+  letter-spacing: 0.4399999976158142px;
+  text-align: left;
+  color: #e8244f;
+}
+.list {
+  height: 530.6px;
+  margin: 64.2px auto 0 auto;
+  &__listitem {
+    @include flex(flex, row, none, center);
+    float: left;
+    height: 113px;
+    margin-bottom: 26.2px;
+  }
+
+  &__title {
+    font-size: 46px;
+    line-height: 55px;
+    width: 380px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 21px;
+    width: 350px;
+    position: relative;
+    left: 283px;
+  }
+  &__imgarrow {
+    position: relative;
+    left: 500px;
+  }
+}
+
+// three frame
+
+.three-frame {
+  width: 1440px;
+  height: 1600px;
+  margin: 0px auto;
+  &__wrapper {
+    width: 1296px;
+    height: 1532.5px;
+    margin: 0px auto;
+  }
+  &__row {
+    @include flex(flex, none, space-between, center);
+    margin-bottom: 45px;
+
+    &:nth-child(1) {
+      @include font(114px, 122px, none, none, none);
+      align-items: flex-start;
+      margin-left: 10px;
+    }
+    &:nth-child(2) {
+      @include font(18px, 23px, none, none, none);
+      margin-left: 15px;
+    }
+    &:nth-child(4) {
+      @include font(17px, 23px, none, none, none);
+      justify-content: start;
+      div {
+        margin-left: 7%;
+      }
+    }
+  }
+}
+
+// four frame
+
+.four-frame {
+  width: 1440px;
+  height: 500px;
+  margin: 0px auto;
+  &__wrapper {
+    width: 1296px;
+    height: 301.08px;
+    margin: 0px auto;
+  }
+  &__smalltitle {
+    margin-left: 15px;
+    margin-top: 70px;
+  }
+  &__imgblock {
+    margin-top: 100px;
+    img {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// five frame
+
+.five-frame {
+  width: 1440px;
+  height: 844px;
+  margin: 0px auto;
+  background-color: #000000;
+  overflow: hidden;
+  &__wrapper {
+    width: 1620px;
+    height: 595px;
+    margin: 0px auto;
+  }
+  &__head {
+    @include flex(flex, row, none, flex-start);
+    padding-top: 145px;
+    margin-left: 72px;
+  }
+  &__listitems {
+    color: #ffffff;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 5px;
+    &:hover {
+      color: #e8244f;
+    }
+  }
+  &__textrightside {
+    margin-left: 233.5px;
+  }
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    text-align: left;
+    color: #ffffff;
+    padding-bottom: 50px;
+  }
+  &__subtitle {
+    font-size: 20px;
+    line-height: 26px;
+    text-align: left;
+    color: #ffffff;
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 21px;
+    text-align: left;
+    color: #ffffff;
+    &::after {
+      content: '___________________';
+      position: relative;
+      left: -136px;
+      top: 15px;
+      color: #fff;
+    }
+  }
+  &__bottom {
+    margin-left: 72px;
+    margin-top: 150px;
+  }
+  &__content {
+    font-size: 114px;
+    line-height: 148px;
+    text-align: left;
+    color: #181818;
+  }
+  &__agile {
+    color: #e8244f;
+  }
+}
+.agile {
+  color: #e8244f;
+}
+
+// six-frame
+
+.six-frame {
+  width: 1440px;
+  height: 1298px;
+  margin: 0px auto;
+  &__wrapper {
+    width: 1296px;
+    height: 1126.36px;
+    margin: 122.31px auto 0 auto;
+  }
+  &__row {
+    @include flex(flex, none, space-between, center);
+    margin-bottom: 32px;
+  }
+  &__textfirstrow {
+    width: 915px;
+    height: 235px;
+  }
+  &__title {
+    @include font(114px, 122px, none, none, none);
+    margin-bottom: 37px;
+  }
+  &__subtitle {
+    @include font(20px, 26px, none, none, none);
+    margin-left: 5px;
+    margin-right: 150px;
+    white-space: nowrap;
+  }
+}
+
+// seven-frame
+
+.seven-frame {
+  width: 1440px;
+  height: 550px;
+  margin: 0px auto;
+  overflow: hidden;
+  white-space: nowrap;
+  @include font(114px, 114px, none, #888888, none);
+  &__textfirstrow {
+    margin-left: -190px;
+    margin-bottom: 50px;
+  }
+  &__textsecondrow {
+    margin-left: -360px;
+    margin-bottom: 50px;
+  }
+  &__textthreerow {
+    margin-left: -250px;
+  }
+  &__element {
+    padding-right: 60px;
+  }
+  &__black {
+    color: #000000;
+  }
+}
+
+// eighth frame
+
+.eighth-frame {
+  width: 1440px;
+  height: 1100px;
+  margin: 0px auto;
+  &__wrapper {
+    width: 1266px;
+    height: 1080.55px;
+    margin: 60px auto 0 auto;
+  }
+  &__body {
+    @include flex(flex, row, space-between, center);
+  }
+  &__title {
+    font-size: 46px;
+    margin: 100px 0 65px 0;
+  }
+  &__subtitle {
+    font-size: 20px;
+    line-height: 25px;
+    margin: 50px 0 30px 0;
+  }
+  &__signature {
+    @include flex(flex, row, none, center);
+  }
+  &__signname {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+// nine frame
+
+.nine-frame {
+  width: 1440px;
+  height: 890px;
+  margin: 100px auto;
+  background-color: #000000;
+  &__wrapper {
+    width: 1296px;
+    height: 750px;
+    display: inline-block;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    margin-left: 72px;
+  }
+
+  &__text {
+    font-size: 10px;
+    line-height: 34px;
+    letter-spacing: 0.4399999976158142px;
+    color: #ffffff;
+    margin-bottom: 64.27px;
+  }
+
+  &__email {
+    font-size: 65px;
+    line-height: 98px;
+    color: #ffffff;
+  }
+
+  &__tel {
+    font-size: 65px;
+    line-height: 98px;
+    color: #ffffff;
+    margin-bottom: 143.73px;
+  }
+  a {
+    color: #ffffff;
+  }
+  &__contentfot {
+    @include flex(flex, row, space-between, none);
+  }
+
+  &__contenttext {
+    font-size: 20px;
+    line-height: 33px;
+    color: #ffffff;
+    margin-bottom: 230px;
+  }
+
+  &__contentimg {
+    a:nth-child(1) {
+      margin-right: 43px;
+    }
+  }
+
+  &__fotbottom {
+    @include flex(flex, row, space-between, center);
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba($color: #ffffff, $alpha: 0.4);
+    a {
+      color: rgba($color: #ffffff, $alpha: 0.4);
+    }
+  }
+}
+.ten-frame {
+  width: 1440px;
+  height: 147px;
+  margin: 0px auto;
+  text-align: center;
+  a {
+    font-size: 46px;
+    line-height: 59px;
+    color: #000000;
+    &:hover {
+      text-decoration: underline;
+      text-shadow: 1px 1px #888888;
+    }
+  }
+}
