@@ -15,12 +15,16 @@
 
 .container {
   max-width: 68%;
+  padding: 0 15px;
   margin: 0 auto;
   @media (max-width: 1280px) {
-    max-width: 80%;
+    max-width: 78%;
   }
   @media (max-width: 1024px) {
-    max-width: 80%;
+    max-width: 88%;
+  }
+  @media (max-width: 768px) {
+    max-width: 98%;
   }
 }
 
@@ -49,45 +53,140 @@
         margin-right: 34px;
       }
     }
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
+  //
+  .burger {
+    display: none;
+    width: 112px;
+    padding-left: 3px;
+    padding-top: 3px;
+    @media (max-width: 767px) {
+      display: inline-block;
+      position: absolute;
+      width: 150px;
+      top: 1px;
+      right: 15px;
+      margin-top: 11px;
+      z-index: 150;
+    }
+
+    // стили для линий
+    &__first-line,
+    &__second-line,
+    &__threeth-line {
+      width: 27%;
+      // позиция бургера
+      margin: 0 0 0 auto; //справа
+      height: 1px;
+      border: 0.5px solid #fff;
+      background-color: #fff;
+      transition: 0.5s;
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+
+    &:hover {
+      // стили первой линии при наведении
+      .burger__first-line {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8.5px;
+        border: 1px solid #fff;
+        background-color: #fff;
+        transition: 0.5s;
+      }
+
+      // стили третьей линии при наведении
+      .burger__second-line {
+        visibility: hidden;
+        transition: 0.1ms;
+      }
+
+      // стили третьей линии при наведении
+      .burger__threeth-line {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8.5px;
+        border: 1px solid #fff;
+        background-color: #fff;
+        transition: 0.5s;
+      }
+      // событие которое показывает меню при наведении/нажатии на бургер меню
+      .burger__menu {
+        visibility: visible;
+        transition: 0.4s ease-in-out;
+        position: absolute;
+        right: 45px;
+        opacity: 0.7;
+      }
+    }
+
+    &__menu {
+      visibility: hidden;
+      position: absolute;
+      top: -5px;
+      right: -150px;
+      opacity: 0;
+      transition: 0.25s ease-in-out;
+    }
+
+    &__list {
+      background-color: #fff;
+      border-radius: 15%;
+      text-align: center;
+    }
+
+    &__link {
+      @include font(none, 14px, 0.1em, none, 700);
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-right: 10px;
+      &:last-child {
+        padding-bottom: 10px;
+      }
+      a {
+        color: #353738;
+        &:hover {
+          color: #1340c5;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  //
 }
 
 .first-frame {
-  padding-top: 220px;
+  padding-top: 12%;
   background-color: #000000;
   padding-bottom: 20px;
   min-height: 94.3vh;
-  img {
-    display: block;
-    width: 45%;
-    margin: 0 auto;
-  }
   &__text {
+    background: url(../img/first-frame/triangle.png) top center/45% no-repeat;
+    min-height: 60vh;
+    @media (max-width: 1800px) {
+      min-height: 60vh;
+    }
+    width: 80%;
+    margin: 0 auto;
     white-space: nowrap;
-    padding-bottom: 40px;
     p {
       &:first-child {
-        position: relative;
-        top: -460px;
-        left: 120px;
-        @include font(11px, 15px, 0.2px, #999999, none);
+        padding: 5% 0 0 40px;
+        @include font(clamp(5px, 2vw, 11px), clamp(10px, 2vw, 15px), 0.2px, #999999, none);
       }
       &:nth-child(2),
       &:last-child {
-        @include font(100px, 125px, 0em, #ffffff, none);
-      }
-      &:nth-child(2) {
-        position: relative;
-        top: -400px;
-        left: 70px;
+        @include font(clamp(35px, 5vw, 100px), clamp(40px, 5vw, 125px), 0em, #ffffff, none);
       }
       &:last-child {
-        position: relative;
-        top: -300px;
-        left: -100px;
+        text-align: right;
       }
     }
-    @include flex(flex, none, center, center);
   }
 
   &__bottom-text {

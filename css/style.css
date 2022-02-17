@@ -113,18 +113,25 @@ h6 {
 
 .container {
   max-width: 68%;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
 @media (max-width: 1280px) {
   .container {
-    max-width: 80%;
+    max-width: 78%;
   }
 }
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 80%;
+    max-width: 88%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 98%;
   }
 }
 
@@ -187,66 +194,162 @@ h6 {
   margin-right: 34px;
 }
 
+@media (max-width: 767px) {
+  .header__list {
+    display: none;
+  }
+}
+
+.header .burger {
+  display: none;
+  width: 112px;
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+@media (max-width: 767px) {
+  .header .burger {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    top: 1px;
+    right: 15px;
+    margin-top: 11px;
+    z-index: 150;
+  }
+}
+
+.header .burger__first-line, .header .burger__second-line, .header .burger__threeth-line {
+  width: 27%;
+  margin: 0 0 0 auto;
+  height: 1px;
+  border: 0.5px solid #fff;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header .burger__first-line:not(:last-child), .header .burger__second-line:not(:last-child), .header .burger__threeth-line:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+.header .burger:hover .burger__first-line {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: relative;
+  top: 8.5px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header .burger:hover .burger__second-line {
+  visibility: hidden;
+  -webkit-transition: 0.1ms;
+  transition: 0.1ms;
+}
+
+.header .burger:hover .burger__threeth-line {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: relative;
+  top: -8.5px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header .burger:hover .burger__menu {
+  visibility: visible;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  position: absolute;
+  right: 45px;
+  opacity: 0.7;
+}
+
+.header .burger__menu {
+  visibility: hidden;
+  position: absolute;
+  top: -5px;
+  right: -150px;
+  opacity: 0;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.header .burger__list {
+  background-color: #fff;
+  border-radius: 15%;
+  text-align: center;
+}
+
+.header .burger__link {
+  font-size: none;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: none;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.header .burger__link:last-child {
+  padding-bottom: 10px;
+}
+
+.header .burger__link a {
+  color: #353738;
+}
+
+.header .burger__link a:hover {
+  color: #1340c5;
+  text-decoration: underline;
+}
+
 .first-frame {
-  padding-top: 220px;
+  padding-top: 12%;
   background-color: #000000;
   padding-bottom: 20px;
   min-height: 94.3vh;
 }
 
-.first-frame img {
-  display: block;
-  width: 45%;
+.first-frame__text {
+  background: url(../img/first-frame/triangle.png) top center/45% no-repeat;
+  min-height: 60vh;
+  width: 80%;
   margin: 0 auto;
+  white-space: nowrap;
 }
 
-.first-frame__text {
-  white-space: nowrap;
-  padding-bottom: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: none;
-          flex-direction: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media (max-width: 1800px) {
+  .first-frame__text {
+    min-height: 60vh;
+  }
 }
 
 .first-frame__text p:first-child {
-  position: relative;
-  top: -460px;
-  left: 120px;
-  font-size: 11px;
-  line-height: 15px;
+  padding: 5% 0 0 40px;
+  font-size: clamp(5px, 2vw, 11px);
+  line-height: clamp(10px, 2vw, 15px);
   letter-spacing: 0.2px;
   color: #999999;
   font-weight: none;
 }
 
 .first-frame__text p:nth-child(2), .first-frame__text p:last-child {
-  font-size: 100px;
-  line-height: 125px;
+  font-size: clamp(35px, 5vw, 100px);
+  line-height: clamp(40px, 5vw, 125px);
   letter-spacing: 0em;
   color: #ffffff;
   font-weight: none;
 }
 
-.first-frame__text p:nth-child(2) {
-  position: relative;
-  top: -400px;
-  left: 70px;
-}
-
 .first-frame__text p:last-child {
-  position: relative;
-  top: -300px;
-  left: -100px;
+  text-align: right;
 }
 
 .first-frame__bottom-text {
