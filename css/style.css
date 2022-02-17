@@ -437,7 +437,7 @@ h6 {
           align-items: center;
 }
 
-@media (max-width: 767px) and (max-height: ) {
+@media (max-width: 767px) {
   .first-frame__bottom-text {
     bottom: 5%;
   }
