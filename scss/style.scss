@@ -190,6 +190,10 @@
       padding-top: 7.5%;
       width: 30%;
     }
+    @media (max-height: 360px) {
+      padding-top: 5%;
+      width: 25%;
+    }
   }
 
   &__text {
@@ -208,6 +212,7 @@
     @media (max-height: 480px) {
       margin-top: -20%;
     }
+
     p {
       &:first-child {
         padding-left: 5%;
@@ -228,18 +233,19 @@
     right: 0;
     left: 0;
     bottom: 3%;
+    width: 68%;
+    margin: 0 auto;
+    @include flex(flex, none, space-between, center);
     @media (max-width: 767px) {
       bottom: 5%;
     }
-    width: 68%;
     @media (max-width: 1280px) {
       width: 78%;
     }
     @media (max-width: 1024px) {
       width: 88%;
     }
-    margin: 0 auto;
-    @include flex(flex, none, space-between, center);
+
     @media (max-width: 767px) {
       @include flex(flex, column, center, center);
       text-align: center;

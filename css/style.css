@@ -364,6 +364,13 @@ h6 {
   }
 }
 
+@media (max-height: 360px) {
+  .first-frame img {
+    padding-top: 5%;
+    width: 25%;
+  }
+}
+
 .first-frame__text {
   white-space: nowrap;
   width: 70%;
