@@ -179,6 +179,17 @@
     @media (max-width: 480px) {
       padding-top: 40%;
     }
+
+    @media (max-height: 640px) {
+      padding-top: 20%;
+    }
+    @media (max-height: 600px) {
+      padding-top: 10%;
+    }
+    @media (max-height: 480px) {
+      padding-top: 7.5%;
+      width: 30%;
+    }
   }
 
   &__text {
@@ -193,6 +204,9 @@
     }
     @media (max-width: 767px) {
       margin-top: -33%;
+    }
+    @media (max-height: 480px) {
+      margin-top: -20%;
     }
     p {
       &:first-child {
@@ -214,7 +228,7 @@
     right: 0;
     left: 0;
     bottom: 3%;
-    @media (max-width: 767px) {
+    @media (max-width: 767px) and (max-height: ) {
       bottom: 5%;
     }
     width: 68%;

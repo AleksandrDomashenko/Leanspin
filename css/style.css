@@ -345,6 +345,25 @@ h6 {
   }
 }
 
+@media (max-height: 640px) {
+  .first-frame img {
+    padding-top: 20%;
+  }
+}
+
+@media (max-height: 600px) {
+  .first-frame img {
+    padding-top: 10%;
+  }
+}
+
+@media (max-height: 480px) {
+  .first-frame img {
+    padding-top: 7.5%;
+    width: 30%;
+  }
+}
+
 .first-frame__text {
   white-space: nowrap;
   width: 70%;
@@ -366,6 +385,12 @@ h6 {
 @media (max-width: 767px) {
   .first-frame__text {
     margin-top: -33%;
+  }
+}
+
+@media (max-height: 480px) {
+  .first-frame__text {
+    margin-top: -20%;
   }
 }
 
@@ -412,7 +437,7 @@ h6 {
           align-items: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) and (max-height: ) {
   .first-frame__bottom-text {
     bottom: 5%;
   }
