@@ -449,31 +449,68 @@
 
 .fourth-frame {
   margin-top: 136px;
+  @media (max-width: 767px) {
+    margin-top: 50px;
+  }
   p {
     @include font(10px, 34px, 0.44px, #e8244f, none);
     margin-bottom: 65px;
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
   }
-
+  &__column {
+    @include flex(flex, column, center, center);
+  }
   &__row {
     @include flex(flex, row, center, center);
     img {
       width: 22%;
     }
+    @media (max-width: 767px) {
+      @include flex(flex, column, center, center);
+      img {
+        width: 30%;
+        &:first-child {
+          align-self: flex-start;
+        }
+        &:nth-child(2) {
+          margin-right: 40%;
+        }
+        &:nth-child(4) {
+          margin-left: 40%;
+        }
+        &:nth-child(5) {
+          align-self: flex-end;
+        }
+      }
+    }
     &:first-child {
       margin-bottom: 50px;
+      @media (max-width: 767px) {
+        margin-bottom: -75px;
+      }
     }
   }
 }
 
 .fiveth-frame {
   margin-top: 115px;
+  @media (max-width: 767px) {
+    margin-top: 50px;
+  }
   background-color: #000000;
   overflow: hidden;
+
   &__row {
     padding-top: 160px;
     @include flex(flex, row, none, none);
     color: #fff;
     margin-bottom: 100px;
+    @media (max-width: 767px) {
+      padding-top: 50px;
+      @include flex(flex, column-reverse, none, none);
+    }
   }
 
   &__column {
@@ -493,33 +530,51 @@
       }
     }
     &:last-child {
-      margin-left: 233px;
+      margin-left: 20%;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+    &:first-child {
+      @media (max-width: 767px) {
+        margin-top: 10px;
+      }
     }
   }
 
   &__list {
     @include font(15px, 28px, none, none, none);
+    white-space: nowrap;
   }
 
   &__title {
-    @include font(58px, 70px, none, none, none);
+    white-space: nowrap;
+    @include font(clamp(30px, 3vw, 58px), clamp(42px, 3vw, 70px), none, none, none);
   }
 
   &__subtitle {
+    white-space: nowrap;
     margin-top: 50px;
-    @include font(20px, 26px, none, none, none);
+    @include font(clamp(12px, 2vw, 20px), clamp(18px, 2vw, 26px), none, none, none);
   }
 
   &__link {
+    white-space: nowrap;
     margin-top: 22px;
-    @include font(16px, 21px, none, none, none);
+    @include font(clamp(12px, 1vw, 16px), clamp(17px, 2vw, 21px), none, none, none);
+    @media (max-width: 767px) {
+      text-align: center;
+    }
     a {
       color: #fff;
       &::after {
         content: '___________________';
         position: relative;
-        top: 10px;
-        left: -136px;
+        top: 1em;
+        left: -8.4em;
+      }
+      @media (max-width: 767px) {
+        margin-left: 8.4em;
       }
       &:hover {
         color: #e8244f;
@@ -527,14 +582,24 @@
     }
   }
 
+  &__list,
+  &__title,
+  &__subtitle {
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
   &__text {
     margin-left: 16%;
     white-space: nowrap;
     padding-bottom: 93px;
     color: #ffffff;
-    @include font(114px, 148px, none, #181818, none);
+    @include font(clamp(50px, 7vw, 114px), clamp(84px, 7vw, 148px), none, #181818, none);
     span {
       color: #e8244f;
+    }
+    @media (max-width: 767px) {
+      margin-left: 10%;
     }
   }
 }
@@ -609,8 +674,8 @@
 
   &__column {
     img {
-      width: 568px;
-      height: 758px;
+      width: 100%;
+      border: 1px solid #000;
     }
     &:first-child {
       margin-right: 11%;
@@ -630,8 +695,7 @@
   &__signature {
     @include flex(flex, row, space-between, center);
     img {
-      width: 240px;
-      height: 136px;
+      width: 100%;
     }
   }
 
