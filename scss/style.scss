@@ -232,12 +232,12 @@
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 3%;
+    bottom: 2%;
     width: 68%;
     margin: 0 auto;
     @include flex(flex, none, space-between, center);
     @media (max-width: 767px) {
-      bottom: 5%;
+      bottom: 0;
     }
     @media (max-width: 1280px) {
       width: 78%;
@@ -263,7 +263,7 @@
   .text_r {
     padding-left: 15px;
     @media (max-width: 767px) {
-      padding-top: 30px;
+      padding-top: 10px;
       padding-left: 0;
     }
     p {
@@ -280,6 +280,9 @@
 .second-frame {
   p {
     padding-top: 80px;
+    @media (max-width: 767px) {
+      padding-top: 30px;
+    }
     @include font(10px, 34px, 0.44px, #e8244f, none);
   }
   &__columns {
@@ -288,8 +291,14 @@
 
   &__row {
     @include flex(flex, none, space-between, center);
+    @media (max-width: 767px) {
+      @include flex(flex, column, center, center);
+    }
     &:not(:last-child) {
       margin-bottom: 60px;
+      @media (max-width: 767px) {
+        margin-bottom: 30px;
+      }
     }
     &:last-child {
       margin-bottom: 80px;
@@ -300,65 +309,139 @@
         transform: rotate(360deg) scale(1.3, 1.3);
         transition: all 0.35s ease-in-out;
       }
+      @media (max-width: 767px) {
+        position: absolute;
+        align-self: flex-end;
+      }
     }
     img {
-      widows: 43px;
-      height: 43px;
+      width: 43px;
     }
   }
 }
 .title {
-  width: 380px;
-  @include font(46px, 55px, none, none, none);
+  width: 36.5%;
+  @media (max-width: 767px) {
+    width: auto;
+    align-self: flex-start;
+  }
+  @include font(clamp(16px, 3vw, 46px), clamp(25px, 3vw, 55px), none, none, none);
 }
 .subtitle {
-  justify-self: flex-start;
-  @include font(16px, 21px, none, none, none);
-  margin: 0 auto 0 230px;
+  padding-right: 15px;
+  @include font(clamp(12px, 1vw, 16px), clamp(19px, 1vw, 21px), none, none, none);
+  margin: 0 auto 0 10%;
+  @media (max-width: 1024px) {
+    margin-left: 5%;
+  }
+  @media (max-width: 767px) {
+    margin: 0;
+    align-self: flex-start;
+  }
 }
 
 .threeth-frame {
   &__columns {
-    margin-top: 163px;
+    margin-top: 160px;
+    @media (max-width: 767px) {
+      margin-top: 50px;
+    }
   }
 
   &__row {
     @include flex(flex, none, space-between, center);
+    @media (max-width: 767px) {
+      @include flex(flex, column, space-between, center);
+    }
     &:not(:last-child) {
       margin-bottom: 45px;
+      @media (max-width: 767px) {
+        margin-bottom: 10px;
+      }
     }
 
     img {
       width: 23.2%;
       margin-left: 2.4%;
+      @media (max-width: 767px) {
+        width: 70%;
+      }
     }
 
     &:first-child {
-      @include font(114px, 122px, none, none, none);
+      @include font(clamp(35px, 7vw, 114px), clamp(43px, 7vw, 122px), none, none, none);
+      @media (max-width: 767px) {
+        text-align: center;
+        p {
+          &:last-child {
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
 
     &:nth-child(2) {
-      @include font(18px, 23px, none, none, none);
+      @include font(clamp(16px, 1vw, 18px), clamp(17px, 2vw, 23px), none, none, none);
+
+      @media (max-width: 767px) {
+        p {
+          text-align: center;
+          &:first-child {
+            margin-top: 20px;
+          }
+          &:last-child {
+            margin-bottom: 20px;
+          }
+        }
+        img {
+          width: 70%;
+          &:last-child {
+            margin-top: 10px;
+          }
+        }
+      }
     }
 
     &:nth-child(3) {
       img {
         &:first-child {
           margin-left: auto;
+          @media (max-width: 767px) {
+            margin-left: 2.4%;
+            margin-bottom: 10px;
+          }
         }
+        &:nth-child(2) {
+          margin-bottom: 10px;
+        }
+        @media (max-width: 767px) {
+          width: 70%;
+        }
+      }
+      @media (max-width: 767px) {
+        position: relative;
       }
     }
     &:last-child {
-      @include font(17px, 23px, none, none, none);
-      // justify-content: flex-start;
+      @include font(clamp(11px, 1vw, 17px), clamp(17px, 2vw, 23px), none, none, none);
+
       img {
         &:first-child {
           margin-left: 0;
+          @media (max-width: 767px) {
+            margin-left: 2.4%;
+            margin-bottom: 10px;
+          }
         }
       }
       div {
         margin: 0 auto;
         padding: 0 15px;
+        @media (max-width: 767px) {
+          padding: 0;
+          text-align: center;
+          margin-top: 10px;
+        }
       }
     }
   }
