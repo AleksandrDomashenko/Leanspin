@@ -411,9 +411,6 @@
             margin-bottom: 10px;
           }
         }
-        &:nth-child(2) {
-          margin-bottom: 10px;
-        }
         @media (max-width: 767px) {
           width: 70%;
         }
@@ -571,7 +568,7 @@
         content: '___________________';
         position: relative;
         top: 1em;
-        left: -8.4em;
+        left: -8.5em;
       }
       @media (max-width: 767px) {
         margin-left: 8.4em;
@@ -600,32 +597,63 @@
     }
     @media (max-width: 767px) {
       margin-left: 10%;
+      white-space: normal;
+      padding-bottom: 40px;
     }
   }
 }
 
 .sixth-frame {
   margin-top: 122px;
+  @media (max-width: 767px) {
+    margin-top: 40px;
+  }
   &__column {
     @include flex(flex, column, space-between, none);
     img {
       width: 23.2%;
+      @media (max-width: 767px) {
+        width: 70%;
+      }
       margin-right: 2.4%;
     }
   }
 
   &__row {
     @include flex(flex, none, space-between, center);
+    @media (max-width: 767px) {
+      @include flex(flex, column, space-between, center);
+      text-align: center;
+    }
     &:not(:last-child) {
       margin-bottom: 32px;
+      @media (max-width: 767px) {
+        margin-bottom: 20px;
+      }
     }
     &:first-child {
       justify-content: flex-start;
+      @media (max-width: 767px) {
+        flex-direction: column-reverse;
+      }
+    }
+    &:nth-child(2) {
+      @media (max-width: 767px) {
+        img {
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        }
+      }
     }
     &:last-child {
       img {
         &:last-child {
           margin-right: 0px;
+          @media (max-width: 767px) {
+            margin-top: 15px;
+            margin-right: 2.4%;
+          }
         }
       }
     }
@@ -633,18 +661,24 @@
 
   &__text {
     &:first-child {
-      @include font(20px, 26px, none, none, none);
+      @include font(clamp(12px, 2vw, 20px), clamp(18px, 2vw, 26px), none, none, none);
       margin-right: auto;
+      @media (max-width: 767px) {
+        margin: 0 auto 15px auto;
+      }
     }
   }
 
   &__title {
-    @include font(114px, 122px, none, none, none);
+    @include font(clamp(70px, 7vw, 114px), clamp(78, 7vw, 122px), none, none, none);
     margin-bottom: 37px;
   }
 
   &__subtitle {
-    @include font(20px, 26px, none, none, none);
+    @include font(clamp(12px, 2vw, 20px), clamp(18px, 2vw, 26px), none, none, none);
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -653,42 +687,65 @@
   overflow: hidden;
 
   margin: 130px auto 0 auto;
-  @include font(114px, 114px, none, #888888, none);
+  @media (max-width: 767px) {
+    margin-top: 60px;
+  }
+  @include font(clamp(70px, 7vw, 114px), clamp(70px, 7vw, 114px), none, #888888, none);
   p {
     margin-left: -10%;
+    @media (max-width: 767px) {
+      margin-left: -15%;
+    }
     &:not(:last-child) {
       margin-bottom: 75px;
+      @media (max-width: 767px) {
+        margin-bottom: 20px;
+      }
     }
   }
   span {
     margin: 0 60px;
+    @media (max-width: 767px) {
+      margin: 0 15px;
+    }
     color: #000000;
   }
 }
 
 .eighth-frame {
   margin-top: 190px;
+  @media (max-width: 767px) {
+    margin-top: 60px;
+  }
   &__row {
     @include flex(flex, row, center, none);
+    @media (max-width: 767px) {
+      @include flex(flex, column, center, none);
+    }
   }
 
   &__column {
     img {
       width: 100%;
-      border: 1px solid #000;
     }
     &:first-child {
       margin-right: 11%;
+      @media (max-width: 767px) {
+        margin: 0 0 20px 0;
+      }
     }
   }
 
   &__text {
-    @include font(20px, 25px, none, none, none);
+    @include font(clamp(12px, 2vw, 20px), clamp(17px, 2vw, 25px), none, none, none);
     margin-top: 50px;
     &:first-child {
-      @include font(46px, 57px, none, none, none);
+      @include font(clamp(16px, 3vw, 46px), clamp(27px, 3vw, 57px), none, none, none);
       margin-bottom: 40px;
       margin-top: 100px;
+      @media (max-width: 767px) {
+        margin: 20px 0;
+      }
     }
   }
 
@@ -701,7 +758,10 @@
 
   &__signone,
   &__signsec {
-    @include font(16px, 21px, none, none, none);
+    @include font(clamp(12px, 1vw, 16px), clamp(19px, 1vw, 21px), none, none, none);
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
 }
 
