@@ -769,20 +769,30 @@
   background-color: #000000;
   margin-top: 117px;
   padding-top: 100px;
+  @media (max-width: 767px) {
+    margin-top: 60px;
+    padding-top: 40px;
+  }
   &__pretitle {
     @include font(10px, 34px, 0.44px, #fff, none);
     margin-bottom: 64px;
+    @media (max-width: 767px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__email,
   &__phone {
     a {
-      @include font(65px, 98px, none, #fff, none);
+      @include font(clamp(40px, 4vw, 65px), clamp(73px, 5vw, 98px), none, #fff, none);
     }
   }
 
   &__phone {
     margin-bottom: 145px;
+    @media (max-width: 767px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__row {
@@ -790,11 +800,16 @@
     &:last-child {
       margin-top: 230px;
       margin-bottom: 43px;
+      @media (max-width: 767px) {
+        @include flex(flex, column, space-between, center);
+        margin-top: 50px;
+        margin-bottom: 40px;
+      }
     }
   }
 
   &__text {
-    @include font(20px, 33px, none, #fff, none);
+    @include font(clamp(13px, 2vw, 20px), clamp(26px, 3vw, 33px), none, #fff, none);
   }
 
   &__link {
@@ -810,6 +825,18 @@
         transition: all 0.4s ease-in-out;
       }
     }
+    @media (max-width: 767px) {
+      a {
+        &:first-child {
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
 
   &__copyright {
@@ -820,6 +847,9 @@
     a,
     p {
       @include font(12px, 17px, none, rgba(255, 255, 255, 0.4), none);
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
     }
   }
 
@@ -833,7 +863,7 @@
   white-space: nowrap;
 
   a {
-    @include font(46px, 59px, none, #000, none);
+    @include font(clamp(16px, 3vw, 46px), clamp(29px, 3vw, 59px), none, #000, none);
     &:hover {
       text-decoration: underline;
     }
